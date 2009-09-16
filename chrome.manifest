@@ -1,4 +1,4 @@
-content	disableupdate	jar:chrome/unicharm-custom.jar!/content/disableupdate/
+content	disableupdate	jar:chrome/disableaddons.jar!/content/disableupdate/
 
 overlay	chrome://browser/content/browser.xul	chrome://disableupdate/content/browser.xul
 overlay	chrome://browser/content/preferences/preferences.xul	chrome://disableupdate/content/preferences.xul

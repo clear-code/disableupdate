@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="preferences.css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript"><![CDATA[
+window.addEventListener('DOMContentLoaded', function() {
+	window.removeEventListener('DOMContentLoaded', arguments.callee, false);
+
+	window.addEventListener('paneload', function() {
+		var tab = document.getElementById('updateTab');
+		if (!tab) return;
+		var panel = document.getElementById('updatePanel');
+		tab.parentNode.removeChild(tab);
+		panel.parentNode.removeChild(panel);
+		window.removeEventListener('paneload', arguments.callee, false);
+	}, false);
+
+}, false);
+]]></script>
+
+</overlay>

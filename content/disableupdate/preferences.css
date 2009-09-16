@@ -1,0 +1,6 @@
+/* advanced */
+#updateTab,
+#updatePanel {
+	visibility: collapse !important;
+	-moz-user-focus: ignore !important;
+}

@@ -1,0 +1,7 @@
+/* menu bar */
+#updateSeparator,
+#checkForUpdates
+{
+	display: none !important;
+	-moz-user-focus: ignore !important;
+}

@@ -1,0 +1,7 @@
+#updateBox,
+#updateBox *,
+#currentChannelText
+{
+	display: none !important;
+	-moz-user-focus: ignore !important;
+}

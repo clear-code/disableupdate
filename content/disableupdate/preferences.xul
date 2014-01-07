@@ -6,12 +6,36 @@
 window.addEventListener('DOMContentLoaded', function() {
 	window.removeEventListener('DOMContentLoaded', arguments.callee, false);
 
+	var isThunderbird = location.href.indexOf('chrome://messenger/') == 0;
+	var tabFinder = isThunderbird ?
+		function() {
+			var previousTab = document.getElementById('networkingTab');
+			return previousTab && previousTab.nextSibling;
+		} :
+		function() {
+			return document.getElementById('updateTab');
+		} ;
+	var panelFinder = isThunderbird ?
+		function() {
+			var child = document.getElementById('autoUpdateGroup');
+			return child && child.parentNode;
+		} :
+		function() {
+			return document.getElementById('updatePanel');
+		} ;
+
 	window.addEventListener('paneload', function() {
-		var tab = document.getElementById('updateTab');
-		if (!tab) return;
-		var panel = document.getElementById('updatePanel');
-		tab.parentNode.removeChild(tab);
-		panel.parentNode.removeChild(panel);
+		var tab =  tabFinder();
+		if (!tab)
+			return;
+		try {
+			var panel = panelFinder();
+			tab.parentNode.removeChild(tab);
+			panel.parentNode.removeChild(panel);
+		}
+		catch(error) {
+			Components.utils.reportError(error);
+		}
 		window.removeEventListener('paneload', arguments.callee, false);
 	}, false);
 

@@ -12,7 +12,11 @@ window.addEventListener('DOMContentLoaded', function() {
 	var isThunderbird = location.href.indexOf('chrome://messenger/') == 0;
 	var tabFinder = isThunderbird ?
 		function() {
-			var previousTab = document.getElementById('networkingTab');
+			var element = document.getElementById('updateTab');
+			if (element) {
+				return element;
+			}
+		        var previousTab = document.getElementById('networkingTab');
 			return previousTab && previousTab.nextSibling;
 		} :
 		function() {
@@ -20,7 +24,11 @@ window.addEventListener('DOMContentLoaded', function() {
 		} ;
 	var panelFinder = isThunderbird ?
 		function() {
-			var child = document.getElementById('autoUpdateGroup');
+			var childId = document.getElementById('updateApp');
+			if (childId) {
+				return childId.parentNode;
+			}
+		        var child = document.getElementById('autoUpdateGroup');
 			return child && child.parentNode;
 		} :
 		function() {

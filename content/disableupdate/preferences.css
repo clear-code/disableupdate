@@ -4,6 +4,7 @@
 
 /* advanced */
 #updateTab,
+#updateApp,
 #updatePanel {
 	visibility: collapse !important;
 	-moz-user-focus: ignore !important;

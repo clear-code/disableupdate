@@ -8,7 +8,8 @@
 @namespace xbl url("http://www.mozilla.org/xbl");
 
 @-moz-document
-  url-prefix("about:preferences")
+  url-prefix("about:preferences"),
+  url-prefix("chrome://browser/content/preferences/in-content/preferences.xul")
   {
     *|*#updateTab
     {

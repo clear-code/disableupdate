@@ -10,3 +10,7 @@ overlay	chrome://messenger/content/preferences/preferences.xul	chrome://disableu
 
 style chrome://browser/content/aboutDialog.xul chrome://disableupdate/content/aboutDialog.css
 style chrome://messenger/content/aboutDialog.xul chrome://disableupdate/content/aboutDialog.css
+
+component	{220a8644-d750-4c79-95ac-a6362764bdca}	components/Startup.js
+contract	@clear-code.com/disableupdate/startup;1	{220a8644-d750-4c79-95ac-a6362764bdca}
+category	profile-after-change	DisableUpdateStartupService	@clear-code.com/disableupdate/startup;1

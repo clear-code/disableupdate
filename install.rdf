@@ -5,7 +5,7 @@
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="disableupdate@clear-code.com"
                    em:name="Disable Auto-update"
-                   em:version="1.0"
+                   em:version="1.1"
                    em:type="2"
                    em:description="Disable Auto-update."
                    em:creator="ClearCode Inc."

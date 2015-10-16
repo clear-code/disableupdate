@@ -19,9 +19,9 @@ const SSS = Cc['@mozilla.org/content/style-sheet-service;1']
 const IOService = Cc['@mozilla.org/network/io-service;1']
 		.getService(Ci.nsIIOService);
 
-function DisableSyncStartupService() {
+function DisableUpdateStartupService() {
 }
-DisableSyncStartupService.prototype = {
+DisableUpdateStartupService.prototype = {
 	classID          : kCID,
 	contractID       : kID,
 	classDescription : kNAME,
@@ -68,6 +68,6 @@ DisableSyncStartupService.prototype = {
 };
 
 if (XPCOMUtils.generateNSGetFactory)
-  var NSGetFactory = XPCOMUtils.generateNSGetFactory([DisableSyncStartupService]);
+  var NSGetFactory = XPCOMUtils.generateNSGetFactory([DisableUpdateStartupService]);
 else
-  var NSGetModule = XPCOMUtils.generateNSGetModule([DisableSyncStartupService]);
+  var NSGetModule = XPCOMUtils.generateNSGetModule([DisableUpdateStartupService]);
